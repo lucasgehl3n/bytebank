@@ -1,8 +1,7 @@
-# bytebank
+# Bytebank 
+This is a project created with the intention of learning Flutter. The Bytebank is based on the Alura course . 
 
-A new Flutter project.
-
-## Getting Started
+## Getting Started - About Flutter
 
 This project is a starting point for a Flutter application.
 
