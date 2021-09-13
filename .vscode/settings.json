@@ -5,7 +5,8 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/build": true
+        "**/build": true,
+        "**/README.md": true
     },
     "explorerExclude.backup": null
 }

@@ -5,13 +5,13 @@ import 'package:sqflite/sqflite.dart';
 class ContactDao {
   static const String tableSql = 'CREATE TABLE $_tableName('
       '$_id INTEGER PRIMARY KEY, '
-      '_name TEXT, '
-      'numeroConta INTEGER)';
+      '$_name TEXT, '
+      '$_accountNumber INTEGER)';
 
   static const String _tableName = 'contacts';
   static const String _id = 'id';
-  static const String _name = 'nome';
-  static const String _numeroConta = 'numeroConta';
+  static const String _name = 'name';
+  static const String _accountNumber = 'accountNumber';
 
   Future<int> save(Contact contact) async {
     final Database db = await createDatabase();
@@ -30,8 +30,8 @@ class ContactDao {
 
   Map<String, dynamic> _toMap(Contact contact) {
     final Map<String, dynamic> contactMap = Map();
-    contactMap[_name] = contact.nome;
-    contactMap[_numeroConta] = contact.numeroConta;
+    contactMap[_name] = contact.name;
+    contactMap[_accountNumber] = contact.accountNumber;
     return contactMap;
   }
 
@@ -48,7 +48,7 @@ class ContactDao {
       final Contact contact = Contact(
         map[_id],
         map[_name],
-        map[_numeroConta],
+        map[_accountNumber],
       );
       contacts.add(contact);
     }
