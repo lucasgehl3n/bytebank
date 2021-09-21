@@ -1,16 +1,10 @@
+import 'package:bytebank/screens/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'WebApi/webclients/transactions_webclients.dart';
-import 'models/Contact.dart';
-import 'models/Transaction.dart';
-import 'screens/dashboard.dart';
+import 'package:uuid/uuid.dart';
 
 void main() async {
+  print(Uuid().v1());
   runApp(BytebankApp());
-  final TransactionWebClient _webClient = TransactionWebClient();
-
-  _webClient
-      .save(Transaction(200.0, Contact(0, 'Gui', 2000)))
-      .then((transaction) => print(transaction));
 }
 
 class BytebankApp extends StatelessWidget {
